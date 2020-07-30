@@ -64,6 +64,25 @@ To run unit tests
 grunt karma:unit
 ```
 
+## Using Docker
+
+To use Docker, you (obviously) need to have [Docker installed](https://www.docker.com/get-started).
+
+### Development
+
+To start the development environment in Docker and make the app accessible on [http://localhost:8000/](http://localhost:8000/)
+
+```
+docker-compose up
+``` 
+
+To stop and remove the development container
+
+```
+<Ctrl+C>
+docker-compose down
+```
+
 ## Contributing
 
 Anyone and everyone is welcome to contribute. Clone the repository and fire your pull requests.
