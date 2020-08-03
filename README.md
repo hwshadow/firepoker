@@ -68,6 +68,8 @@ grunt karma:unit
 
 To use Docker, you (obviously) need to have [Docker installed](https://www.docker.com/get-started).
 
+For convenience, all Docker-related commands below are also available as an npm script.
+
 ### Development
 
 To start the development environment in Docker and make the app accessible on [http://localhost:8000/](http://localhost:8000/)
