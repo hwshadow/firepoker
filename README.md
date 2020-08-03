@@ -75,13 +75,12 @@ For convenience, all Docker-related commands below are also available as an npm 
 To start the development environment in Docker and make the app accessible on [http://localhost:8000/](http://localhost:8000/)
 
 ```
-docker-compose up
-``` 
+docker-compose up -d
+```
 
 To stop and remove the development container
 
 ```
-<Ctrl+C>
 docker-compose down
 ```
 

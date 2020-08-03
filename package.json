@@ -33,6 +33,6 @@
   "scripts": {
     "docker:down": "docker-compose down",
     "docker:test": "docker-compose run --rm app grunt test",
-    "docker:up": "docker-compose up"
+    "docker:up": "docker-compose up -d"
   }
 }
