@@ -83,6 +83,14 @@ To stop and remove the development container
 docker-compose down
 ```
 
+### Testing
+
+To run tests within the Docker container
+
+```
+docker-compose run --rm app grunt test
+```
+
 ## Contributing
 
 Anyone and everyone is welcome to contribute. Clone the repository and fire your pull requests.
