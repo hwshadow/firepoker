@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:6 AS dev
 
 # install global npm packages
 RUN npm install -g \
@@ -23,7 +23,7 @@ RUN apt-get update \
 ENV KARMABROWSER="PhantomJS"
 
 # container startup command
-COPY ./docker/dev/docker-cmd.sh /usr/local/bin/docker-cmd.sh
+COPY ./docker/docker-cmd.sh /usr/local/bin/docker-cmd.sh
 RUN chown node:node /usr/local/bin/docker-cmd.sh && \
     chmod 0755 /usr/local/bin/docker-cmd.sh
 
@@ -32,3 +32,18 @@ WORKDIR /src
 USER node
 
 CMD [ "/bin/bash", "-c", "/usr/local/bin/docker-cmd.sh" ]
+
+
+FROM dev AS builder
+
+USER root
+COPY . /src
+RUN chown -R node:node /src
+
+USER node
+RUN grunt build
+
+
+FROM nginx:latest
+
+COPY --from=builder ./src/dist /usr/share/nginx/html

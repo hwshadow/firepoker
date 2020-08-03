@@ -1,13 +1,14 @@
-version: "3"
+version: "3.4"
 services:
 
   app:
-    container_name: firepoker
+    container_name: firepoker-dev
 
-    image: firepoker
+    image: firepoker-dev
     build:
       context: .
-      dockerfile: docker/dev/Dockerfile
+      dockerfile: docker/Dockerfile
+      target: dev
 
     volumes:
       - .:/src

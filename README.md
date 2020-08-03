@@ -92,6 +92,14 @@ To run tests within the Docker container
 docker-compose run --rm app grunt test
 ```
 
+### Build
+
+To build a deployment-ready docker container
+
+```
+docker build -f docker/Dockerfile -t firepoker .
+```
+
 ## Contributing
 
 Anyone and everyone is welcome to contribute. Clone the repository and fire your pull requests.
