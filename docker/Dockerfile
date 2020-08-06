@@ -22,16 +22,11 @@ RUN apt-get update \
  && rm -rf /tmp/phantomjs
 ENV KARMABROWSER="PhantomJS"
 
-# container startup command
-COPY ./docker/docker-cmd.sh /usr/local/bin/docker-cmd.sh
-RUN chown node:node /usr/local/bin/docker-cmd.sh && \
-    chmod 0755 /usr/local/bin/docker-cmd.sh
-
 WORKDIR /src
 
 USER node
 
-CMD [ "/bin/bash", "-c", "/usr/local/bin/docker-cmd.sh" ]
+CMD [ "/bin/bash", "/src/docker/docker-cmd.sh" ]
 
 
 FROM dev AS builder
